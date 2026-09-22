@@ -1,3 +1,0 @@
-Plantilla 3 — Tema
-Estructura: logo + breadcrumb + título/descripción + Respuestas Herbo (4 cards con video) + Más preguntas (acordeón).
-Las cards están preparadas para enlazar a páginas individuales cuando existan.

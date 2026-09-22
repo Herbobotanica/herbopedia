@@ -3,348 +3,324 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Herbo Pets | Herbopedia</title>
-<meta name="description" content="Todo lo que necesitás saber para acompañar a tus peluditos con Herbo.">
+<title>Herbopedia — Un mapa para aprender, explorar y conocer cómo usar nuestros productos.</title>
+<meta name="description" content="Herbopedia: respuestas, guías y conocimiento sobre el universo Herbo.">
 <style>
+
 @font-face {
   font-family: "Seraphic";
-  src: url("../assets/seraphic/Seraphic Regular.ttf") format("truetype");
+  src: url("assets/seraphic/Seraphic Regular.ttf") format("woff2");
   font-display: swap;
 }
+
 @font-face {
   font-family: "Buro";
-  src: url("../assets/buro/buro/Buro Steady.otf") format("opentype");
+  src: url("assets/buro/buro/Buro Steady.otf") format("woff2");
   font-display: swap;
 }
+
 :root {
-  --teal:#0d596a;
-  --plum:#462c58;
-  --sage:#b3bd81;
-  --lilac:#8c749d;
-  --slate:#50645f;
-  --sand:#c5a06e;
-  --cream:#dedcd0;
-  --lime:#c0ce5f;
-  --lavender:#c1b2cc;
-  --forest:#304f48;
-  --ink:#27302e;
-  --white:#fffdf9;
+  --teal: #0d596a;
+  --plum: #462c58;
+  --sage: #b3bd81;
+  --lilac: #8c749d;
+  --slate: #50645f;
+  --sand: #c5a06e;
+  --cream: #dedcd0;
+  --lime: #c0ce5f;
+  --lavender: #c1b2cc;
+  --forest: #304f48;
+  --ink: #27302e;
+  --white: #fffdf9;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:"Buro", Arial, sans-serif;
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Buro", "Buro Text", Arial, sans-serif;
+  min-height: 100vh;
 }
-a { color:inherit; text-decoration:none; }
+a { color: inherit; text-decoration: none; }
 .page {
-  max-width:1240px;
-  margin:0 auto;
-  padding:24px 34px 70px;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 34px 70px;
 }
 .topbar {
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 62px;
 }
-.logo { width:112px; height:auto; }
-
-.breadcrumb {
-  margin:18px 0 0;
-  font-size:14px;
-  color:var(--teal);
+.logo {
+  width: 116px;
+  height: auto;
 }
-.breadcrumb a { opacity:.72; }
-.breadcrumb span { margin:0 7px; opacity:.45; }
-
 .hero {
-  text-align:center;
-  padding:48px 20px 30px;
-  position:relative;
+  text-align: center;
+  padding: 46px 20px 30px;
+}
+.eyebrow {
+  font-size: 14px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 16px;
 }
 h1 {
-  font-family:"Seraphic", Georgia, serif;
-  font-weight:400;
-  font-size:clamp(54px,7vw,88px);
-  line-height:.9;
-  color:var(--forest);
-  margin:0;
-  letter-spacing:-.035em;
+  font-family: "Seraphic", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(58px, 8vw, 104px);
+  line-height: .88;
+  letter-spacing: -.035em;
+  color: var(--plum);
+  margin: 0;
 }
 .subtitle {
-  max-width:650px;
-  margin:18px auto 0;
-  color:var(--slate);
-  font-size:clamp(18px,2vw,22px);
-  line-height:1.35;
+  margin: 18px auto 0;
+  font-size: clamp(16px, 1.7vw, 20px);
+  color: var(--slate);
+  max-width: 540px;
+  line-height: 1.35;
 }
-
-/* Search */
 .search-wrap {
-  max-width:720px;
-  margin:34px auto 48px;
-  position:relative;
-  z-index:30;
+  margin: 36px auto 46px;
+  max-width: 720px;
+  position: relative;
+  z-index: 30;
 }
 .search {
-  width:100%;
-  border:1.5px solid rgba(48,79,72,.23);
-  border-radius:999px;
-  background:rgba(255,253,249,.92);
-  padding:19px 64px 19px 25px;
-  font:inherit;
-  font-size:17px;
-  outline:none;
-  box-shadow:0 8px 28px rgba(48,79,72,.06);
+  width: 100%;
+  border: 1.5px solid rgba(48,79,72,.22);
+  border-radius: 999px;
+  background: rgba(255,253,249,.9);
+  padding: 20px 60px 20px 25px;
+  font: inherit;
+  font-size: 17px;
+  outline: none;
+  box-shadow: 0 8px 28px rgba(48,79,72,.06);
 }
 .search:focus {
-  border-color:var(--teal);
-  box-shadow:0 0 0 5px rgba(13,89,106,.08);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 5px rgba(13,89,106,.08);
 }
 .search-icon {
-  position:absolute;
-  right:22px;
-  top:50%;
-  transform:translateY(-52%);
-  color:var(--teal);
-  font-size:30px;
-  line-height:1;
+  position: absolute;
+  right: 23px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 29px;
+  color: var(--teal);
+}
+.suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 13px;
+}
+.suggestions span {
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(48,79,72,.12);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 13px;
+  color: var(--forest);
 }
 .results {
-  display:none;
-  position:absolute;
-  z-index:50;
-  left:0;
-  right:0;
-  top:calc(100% + 10px);
-  max-width:720px;
-  margin:0 auto;
-  background:var(--white);
-  border-radius:25px;
-  padding:12px;
-  border:1px solid rgba(48,79,72,.1);
-  box-shadow:0 20px 45px rgba(48,79,72,.1);
-  text-align:left;
+  display: none;
+  position: absolute;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  top: calc(100% + 10px);
+  max-width: 720px;
+  margin: 0;
+  background: var(--white);
+  border-radius: 25px;
+  padding: 16px;
+  border: 1px solid rgba(48,79,72,.1);
+  box-shadow: 0 20px 45px rgba(48,79,72,.10);
+  text-align: left;
 }
-.results.show { display:block; }
+.results.show { display: block; }
 .result {
-  display:block;
-  padding:14px 16px;
-  border-radius:17px;
+  display: block;
+  padding: 14px 16px;
+  border-radius: 17px;
 }
-.result:hover { background:#f4f2e9; }
-.result small {
-  color:var(--teal);
-  text-transform:uppercase;
-  letter-spacing:.08em;
+.result:hover { background: #f4f2e9; }
+.result small { color: var(--teal); text-transform: uppercase; letter-spacing: .08em; }
+.result strong { display: block; margin-top: 3px; font-size: 16px; }
+ .worlds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+  max-width: 1050px;
+  margin: 0 auto;
 }
-.result strong {
-  display:block;
-  margin-top:3px;
-  font-size:16px;
+.world {
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 46px;
+  padding: 35px 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  isolation: isolate;
+  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 12px 35px rgba(48,79,72,.07);
 }
+.world:hover {
+  transform: translateY(-5px) rotate(-.2deg);
+  box-shadow: 0 18px 45px rgba(48,79,72,.13);
+}
+.world-pets { background: var(--sage); color: var(--forest); border-radius: 62px 38px 52px 42px; }
+.world-human { background: var(--lavender); color: var(--plum); border-radius: 40px 62px 44px 55px; }
+.world-home { background: var(--sand); color: var(--forest); border-radius: 52px 44px 64px 40px; }
+.world-inside { background: var(--teal); color: var(--white); border-radius: 44px 58px 40px 64px; }
 
-/* Sections */
-.section-title {
-  text-align:center;
-  margin:0 0 22px;
+.illustration {
+  position: absolute;
+  right: 7%;
+  left: auto;
+  top: 50%;
+  height: 48%;
+  max-width: 32%;
+  object-fit: contain;
+  object-position: center;
+  transform: translateY(-50%);
+  transition: transform .3s ease;
 }
-.section-title h2 {
-  font-family:"Seraphic", Georgia, serif;
-  font-size:36px;
-  font-weight:400;
-  color:var(--plum);
-  margin:0;
-}
-.section-title p {
-  color:var(--slate);
-  margin:8px auto 0;
-  font-size:15px;
-}
+.world:hover .illustration { transform: translateY(-50%) scale(1.04) rotate(1deg); }
+.world-pets .illustration { height: 48%; top: 50%; right: 7%; }
+.world-pets .pet-dog { height: 44%; top: 50%; right: 7%; }
+.world-human .illustration { height: 52%; right: 7%; top: 50%; }
+.world-home .illustration { height: 54%; right: 7%; top: 50%; }
+.world-inside .illustration { height: 50%; right: 7%; top: 50%; }
 
-.topics {
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-  max-width:1040px;
-  margin:0 auto;
+.world-label {
+  position: relative;
+  z-index: 2;
+  width: 58%;
+  max-width: 330px;
+  margin: 0;
 }
-.topic {
-  position:relative;
-  min-height:270px;
-  overflow:hidden;
-  padding:31px 31px 27px;
-  display:flex;
-  align-items:center;
-  box-shadow:0 12px 35px rgba(48,79,72,.065);
-  transition:transform .25s ease, box-shadow .25s ease;
+.world-number {
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .7;
+  margin-bottom: 8px;
 }
-.topic:hover {
-  transform:translateY(-5px);
-  box-shadow:0 18px 45px rgba(48,79,72,.12);
+.world h2 {
+  font-family: "Seraphic", Georgia, serif;
+  font-size: clamp(30px, 3.2vw, 43px);
+  line-height: .95;
+  font-weight: 400;
+  margin: 0 0 9px;
 }
-.topic-floral {
-  background:var(--sage);
-  color:var(--forest);
-  border-radius:58px 34px 48px 40px;
+.world p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.35;
+  max-width: 330px;
 }
-.topic-aroma {
-  background:var(--lavender);
-  color:var(--plum);
-  border-radius:36px 58px 43px 48px;
+.arrow {
+  margin-top: 18px;
+  font-size: 14px;
+  letter-spacing: .04em;
+  font-weight: 600;
 }
-.topic-situations {
-  background:var(--sand);
-  color:var(--forest);
-  border-radius:44px 48px 62px 35px;
+.footer-note {
+  text-align: center;
+  margin-top: 45px;
+  color: var(--slate);
+  font-size: 14px;
 }
-.topic-care {
-  background:var(--teal);
-  color:var(--white);
-  border-radius:49px 38px 42px 62px;
-}
-.topic-art {
-  position:absolute;
-  z-index:1;
-  width:160px;
-  height:160px;
-  object-fit:contain;
-  right:8%;
-  top:50%;
-  transform:translateY(-50%);
-  transition:transform .3s ease;
-}
-.topic:hover .topic-art {
-  transform:translateY(-50%) scale(1.04) rotate(1deg);
-}
-.topic-copy {
-  position:relative;
-  z-index:2;
-  max-width:65%;
-}
-.topic h3 {
-  font-family:"Seraphic", Georgia, serif;
-  font-size:35px;
-  line-height:.95;
-  font-weight:400;
-  margin:0 0 11px;
-}
-.topic p {
-  margin:0;
-  font-size:15px;
-  line-height:1.38;
-  max-width:390px;
-}
-.topic .cta {
-  margin-top:17px;
-  font-size:14px;
-  font-weight:600;
-  letter-spacing:.03em;
-}
-
-.footer {
-  text-align:center;
-  color:var(--slate);
-  font-size:14px;
-  margin:42px 0 0;
-}
-
-@media (max-width:760px) {
-  .page { padding:18px 16px 48px; }
-  .breadcrumb { margin-top:12px; }
-  .hero { padding:36px 10px 22px; }
-  .hero-art,       .topics { grid-template-columns:1fr; gap:15px; }
-  .topic { min-height:270px; padding:28px 24px; }
-  .topic-copy { max-width:68%; }
-  .topic-art { width:135px; height:135px; right:5%; }
+@media (max-width: 760px) {
+  .page { padding: 20px 16px 45px; }
+  .hero { padding-top: 34px; }
+  .worlds { grid-template-columns: 1fr; gap: 16px; }
+  .world { min-height: 300px; padding: 28px 25px; }
+  .world-label { width: 58%; }
+  .illustration { max-width: 36%; right: 5%; }
+  .world-pets .pet-dog { right: 5%; height: 42%; }
+  .search-wrap { margin-bottom: 34px; }
 }
 </style>
 </head>
 <body>
 <main class="page">
-
   <header class="topbar">
-    <img class="logo" src="../assets/logo-herbo.svg" alt="Herbo">
+    <img class="logo" src="assets/logo-herbo.svg" alt="Herbo">
   </header>
 
-  <nav class="breadcrumb" aria-label="Migas de pan">
-    <a href="../index.html">Herbopedia</a>
-    <span>·</span>
-    <strong>Herbo Pets</strong>
-  </nav>
-
   <section class="hero">
-    <h1>HERBO PETS</h1>
-    <p class="subtitle">Todo lo que necesitás saber para acompañar a tus peluditos con Herbo.</p>
+    <h1>HERBOPEDIA</h1>
+    <p class="subtitle">Un mapa para aprender, explorar y conocer cómo usar nuestros productos.</p>
 
     <div class="search-wrap">
       <input id="search" class="search" type="search" placeholder="¿Qué querés saber?" aria-label="Buscar en Herbopedia">
       <span class="search-icon">⌕</span>
-    </div>
-
-    <div id="results" class="results" aria-live="polite"></div>
-  </section>
-
-  <section aria-labelledby="explorar">
-    <div class="section-title">
-      <h2 id="explorar">Explorá Herbo Pets</h2>
-      <p>Elegí un tema para encontrar la info que estás buscando.</p>
-    </div>
-
-    <div class="topics">
-
-      <a class="topic topic-floral" href="terapia-floral/index.html">
-        <img class="topic-art" src="../assets/gotero.svg" alt="" aria-hidden="true">
-        <div class="topic-copy">
-          <h3>🌸 Terapia Floral</h3>
-          <p>Flores de Bach y de otros sistemas florales, fórmulas, goteros, administración y procesos florales.</p>
-          <div class="cta">Explorar →</div>
-        </div>
-      </a>
-
-      <a class="topic topic-aroma" href="#">
-        <img class="topic-art" src="../assets/bruma.svg" alt="" aria-hidden="true">
-        <div class="topic-copy">
-          <h3>🌿 Aromaterapia</h3>
-          <p>Aceites esenciales, aromas para difusor y brumas áuricas para animales.</p>
-          <div class="cta">Explorar →</div>
-        </div>
-      </a>
-
-      <a class="topic topic-situations" href="#">
-        <img class="topic-art" src="../assets/perrito.svg" alt="" aria-hidden="true">
-        <div class="topic-copy">
-          <h3>🎆 Situaciones y Protocolos</h3>
-          <p>Pirotecnia, viajes, mudanzas, nuevos integrantes, cambios y otros momentos especiales.</p>
-          <div class="cta">Explorar →</div>
-        </div>
-      </a>
-
-      <a class="topic topic-care" href="#">
-        <img class="topic-art" src="../assets/gato-lineas.svg" alt="" aria-hidden="true">
-        <div class="topic-copy">
-          <h3>🐾 Cuidados y Bienestar</h3>
-          <p>Piel, almohadillas y cuidados cotidianos.</p>
-          <div class="cta">Explorar →</div>
-        </div>
-      </a>
-
+      <div id="results" class="results" aria-live="polite"></div>
     </div>
   </section>
 
-  <p class="footer">Herbopedia · Una biblioteca para explorar el universo Herbo.</p>
+  <section class="worlds" aria-label="Universos Herbo">
+    <a class="world world-pets" href="pets/index.html">
+      <img class="illustration pet-dog" src="assets/perrito.svg" alt="" aria-hidden="true">
+      <div class="world-label">
+        <h2>HERBO PETS</h2>
+        <p>Flores, aromaterapia, cuidados y acompañamiento para animales.</p>
+        <div class="arrow">Explorar →</div>
+      </div>
+    </a>
+
+    <a class="world world-human" href="#">
+      <img class="illustration" src="assets/gotero.svg" alt="" aria-hidden="true">
+      <div class="world-label">
+        <h2>HERBO HUMAN</h2>
+        <p>Bienestar, terapia floral, aromas y herramientas para acompañarte.</p>
+        <div class="arrow">Explorar →</div>
+      </div>
+    </a>
+
+    <a class="world world-home" href="#">
+      <img class="illustration" src="assets/erlenmeyer.svg" alt="" aria-hidden="true">
+      <div class="world-label">
+        <h2>HERBO HOME</h2>
+        <p>Sahumos, aromas, rituales y formas de habitar tus espacios.</p>
+        <div class="arrow">Explorar →</div>
+      </div>
+    </a>
+
+    <a class="world world-inside" href="#">
+      <img class="illustration" src="assets/lavanda.svg" alt="" aria-hidden="true">
+      <div class="world-label">
+        <h2>INSIDE HERBO</h2>
+        <p>Te abrimos las puertas de Herbo para que nos conozcas, descubras nuestra historia y todo lo que nos mueve.</p>
+        <div class="arrow">Conocernos →</div>
+      </div>
+    </a>
+  </section>
+
+  <p class="footer-note">Una biblioteca para explorar el universo Herbo, a tu manera.</p>
 </main>
 
 <script>
 const data = [
-  ["Terapia Floral", "¿Cuánto tarda en notarse un cambio con las flores?", "#"],
-  ["Terapia Floral", "¿Mi perro o gato tiene que tomar flores de por vida?", "#"],
-  ["Aromaterapia", "¿Se pueden usar aceites esenciales en perros y gatos?", "#"],
-  ["Situaciones y Protocolos", "¿Qué hacer frente a la pirotecnia?", "#"],
-  ["Cuidados y Bienestar", "¿Cómo cuidar las almohadillas?", "#"]
+  ["Herbo Pets · Terapia floral", "¿Cuánto tarda en notarse un cambio con las flores?", "#"],
+  ["Herbo Pets · Terapia floral", "¿Mi perro o gato tiene que tomar flores de por vida?", "#"],
+  ["Herbo Pets · Aromaterapia", "¿Se pueden usar aceites esenciales en perros y gatos?", "#"],
+  ["Herbo Pets · Situaciones", "¿Qué hacer frente a la pirotecnia?", "#"],
+  ["Herbo Human · Flores", "¿Cómo se administran las flores?", "#"],
+  ["Herbo Home · Aromas", "¿Cómo se utiliza un difusor?", "#"]
 ];
 
 const search = document.getElementById("search");
