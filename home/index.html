@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Herbo Home | Herbopedia</title>
+<meta name="description" content="Todo lo que necesitás saber para explorar el universo Herbo Home.">
+<style>
+@font-face{font-family:"Seraphic";src:url("../assets/seraphic/Seraphic Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"Buro";src:url("../assets/buro/buro/Buro Steady.otf") format("opentype");font-display:swap}
+:root{--brown:#806044;--brown-dark:#63472f;--brown-bg:#e4d7c7;--cream:#f8f4ec;--ink:#30352f;--sage:#b3bd81;--lavender:#c1b2cc;--teal:#0d596a;--forest:#304f48;--sand:#c5a06e;--white:#fffdf9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--brown-bg);color:var(--ink);font-family:"Buro",Arial,sans-serif}a{color:inherit;text-decoration:none}.page{max-width:1240px;margin:0 auto;padding:24px 34px 70px}.topbar{display:flex;align-items:center;justify-content:center;min-height:62px}.logo{width:112px;height:auto}.breadcrumb{margin:18px 0 0;font-size:14px;color:var(--brown-dark)}.breadcrumb a{opacity:.72}.breadcrumb span{margin:0 7px;opacity:.45}.hero{text-align:center;padding:48px 20px 30px}.hero h1{font-family:"Seraphic",Georgia,serif;font-weight:400;font-size:clamp(54px,7vw,88px);line-height:.9;color:var(--brown-dark);margin:0;letter-spacing:-.035em}.subtitle{max-width:700px;margin:18px auto 0;color:var(--forest);font-size:clamp(18px,2vw,22px);line-height:1.35}.search-wrap{max-width:720px;margin:34px auto 48px;position:relative;z-index:30}.search{width:100%;border:1.5px solid rgba(99,71,47,.24);border-radius:999px;background:rgba(255,253,249,.95);padding:19px 64px 19px 25px;font:inherit;font-size:17px;outline:none;box-shadow:0 8px 28px rgba(48,79,72,.06)}.search:focus{border-color:var(--brown);box-shadow:0 0 0 5px rgba(128,96,68,.09)}.search-icon{position:absolute;right:22px;top:50%;transform:translateY(-52%);color:var(--brown-dark);font-size:30px;line-height:1}.results{display:none;position:absolute;z-index:50;left:0;right:0;top:calc(100% + 10px);max-width:720px;margin:0 auto;background:var(--white);border-radius:25px;padding:12px;border:1px solid rgba(99,71,47,.1);box-shadow:0 20px 45px rgba(48,79,72,.1);text-align:left}.results.show{display:block}.result{display:block;padding:14px 16px;border-radius:17px}.result:hover{background:#eee7dd}.result small{color:var(--brown-dark);text-transform:uppercase;letter-spacing:.08em}.result strong{display:block;margin-top:3px;font-size:16px}.section-title{display:flex;align-items:flex-end;justify-content:space-between;gap:25px;margin:0 0 22px;padding:0 4px}.section-title h2{font-family:"Seraphic",Georgia,serif;font-size:36px;font-weight:400;color:var(--brown-dark);margin:0}.routine-card{position:relative;min-height:260px;overflow:hidden;padding:34px 38px;display:flex;align-items:center;background:rgba(255,253,249,.58);color:var(--forest);border:1px solid rgba(99,71,47,.09);border-radius:62px 38px 50px 42px;box-shadow:0 12px 35px rgba(48,79,72,.06);transition:transform .25s ease,box-shadow .25s ease;margin-bottom:48px}.routine-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(48,79,72,.11)}.routine-copy{position:relative;z-index:2;max-width:67%}.routine-copy h3{font-family:"Seraphic",Georgia,serif;font-size:40px;line-height:.95;font-weight:400;color:var(--brown-dark);margin:0 0 12px}.routine-copy p{margin:0;max-width:720px;font-size:16px;line-height:1.45}.routine-copy .cta{margin-top:18px;font-size:14px;font-weight:600;letter-spacing:.03em;color:var(--brown-dark)}.routine-art{position:absolute;right:8%;top:50%;width:185px;height:185px;object-fit:contain;transform:translateY(-50%);opacity:.88}.products-section{margin-top:4px}.products{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;max-width:1100px;margin:0 auto}.product{position:relative;min-height:230px;overflow:hidden;padding:30px;display:flex;align-items:center;box-shadow:0 12px 35px rgba(48,79,72,.06);transition:transform .25s ease,box-shadow .25s ease}.product:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(48,79,72,.12)}.product-chem{background:var(--sage);color:var(--forest);border-radius:55px 34px 48px 39px}.product-aroma{background:var(--lavender);color:var(--brown-dark);border-radius:36px 56px 43px 49px}.product-sales{background:var(--sand);color:var(--forest);border-radius:44px 42px 60px 35px}.product-oils{background:var(--teal);color:var(--white);border-radius:49px 38px 43px 61px}.product-copy{position:relative;z-index:2;max-width:100%;width:100%}.product h3{font-family:"Seraphic",Georgia,serif;font-size:31px;line-height:.95;font-weight:400;margin:0 0 10px}.product p{margin:0;font-size:14px;line-height:1.38}.product .cta{margin-top:16px;font-size:13px;font-weight:600;letter-spacing:.03em}.product:nth-child(1){grid-column:span 3}.product:nth-child(2){grid-column:span 3}.product:nth-child(3){grid-column:span 3}.product:nth-child(4){grid-column:span 3}.footer{text-align:center;color:var(--forest);font-size:14px;margin:42px 0 0}
+@media(max-width:760px){.page{padding:18px 16px 48px}.breadcrumb{margin-top:12px}.hero{padding:36px 10px 22px}.routine-card{min-height:320px;padding:28px 24px;align-items:flex-start}.routine-copy{max-width:72%}.routine-art{width:140px;height:140px;right:4%;top:61%}.products{grid-template-columns:1fr;gap:15px}.product,.product:nth-child(1),.product:nth-child(2),.product:nth-child(3),.product:nth-child(4){grid-column:1/-1;min-height:225px}.product-copy{max-width:100%;width:100%}}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="topbar"><img class="logo" src="../assets/logo-herbo.svg" alt="Herbo"></header>
+<nav class="breadcrumb" aria-label="Migas de pan"><a href="../index.html">Herbopedia</a><span>·</span><strong>Herbo Home</strong></nav>
+<section class="hero">
+<h1>HERBO HOME</h1>
+<p class="subtitle">Convertí tu casa en un refugio de calma, aromas y energía.</p>
+<div class="search-wrap"><input id="search" class="search" type="search" placeholder="¿Qué querés saber?" aria-label="Buscar en Herbopedia"><span class="search-icon">⌕</span><div id="results" class="results" aria-live="polite"></div></div>
+</section>
+<section aria-labelledby="rituales">
+<a class="routine-card" href="rituales-sahumos/index.html">
+<div class="routine-copy"><h3 id="rituales">Rituales y sahumos</h3><p>Ideas, rituales y herramientas para limpiar, armonizar y transformar tus espacios.</p><div class="cta">Explorar rituales →</div></div>
+<img class="routine-art" src="../assets/bruma.svg" alt="" aria-hidden="true">
+</a>
+</section>
+<section class="products-section" aria-labelledby="productos">
+<div class="section-title"><h2 id="productos">Explorá por producto</h2></div>
+<div class="products">
+<a class="product product-chem" href="#"><div class="product-copy"><h3>Chemistry Herbal</h3><p>Un laboratorio de aromas, procesos, fuego, agua y aire.</p><div class="cta">Explorar →</div></div></a>
+<a class="product product-aroma" href="#"><div class="product-copy"><h3>Aromatizá tu espacio</h3><p>Spray textiles, difusor de varillas y esencia para hornito.</p><div class="cta">Explorar →</div></div></a>
+<a class="product product-sales" href="#"><div class="product-copy"><h3>Sales de baño</h3><p>Descubrí sus usos y distintas formas de incorporarlas a tus rituales cotidianos.</p><div class="cta">Explorar →</div></div></a>
+<a class="product product-oils" href="../human/index.html"><div class="product-copy"><h3>Aceites esenciales</h3><p>Explorá el contenido de aceites esenciales en Herbo Human.</p><div class="cta">Explorar →</div></div></a>
+</div>
+</section>
+<p class="footer">Herbopedia · Una biblioteca para explorar el universo Herbo.</p>
+</main>
+<script>
+const data=[
+["Rituales y sahumos","¿Cómo sahumar un espacio?","rituales-sahumos/index.html"],
+["Rituales y sahumos","¿Con qué hierbas puedo sahumar?","rituales-sahumos/index.html"],
+["Rituales y sahumos","¿Cómo descartar un sahumo?","rituales-sahumos/index.html"],
+["Chemistry Herbal","¿Cómo usar Chemistry Herbal?","#"],
+["Aromatizá tu espacio","¿Cómo usar el spray textil?","#"],
+["Sales de baño","¿Cómo usar las sales de baño?","#"],
+["Aceites esenciales","¿Cómo usar aceites esenciales?","../human/index.html"]
+];
+const search=document.getElementById("search"),results=document.getElementById("results");
+function renderResults(q){q=q.trim().toLowerCase();if(!q){results.classList.remove("show");results.innerHTML="";return}const matches=data.filter(item=>item.join(" ").toLowerCase().includes(q));results.innerHTML=matches.length?matches.map(item=>`<a class="result" href="${item[2]}"><small>${item[0]}</small><strong>${item[1]}</strong></a>`).join(""):`<div class="result"><strong>No encontramos una respuesta exacta.</strong><span>Probá con otra palabra, producto o temática.</span></div>`;results.classList.add("show")}
+search.addEventListener("input",e=>renderResults(e.target.value));search.addEventListener("focus",e=>{if(e.target.value.trim())renderResults(e.target.value)});document.addEventListener("click",e=>{if(!e.target.closest(".search-wrap"))results.classList.remove("show")});
+</script>
+</body>
+</html>
